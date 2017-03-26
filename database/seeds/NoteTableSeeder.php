@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-
+use App\Model\Note;
 class NoteTableSeeder extends Seeder
 {
     /**
@@ -11,9 +11,9 @@ class NoteTableSeeder extends Seeder
      */
     public function run()
     {
-        \App\Note::truncate();
+        Note::truncate();
 
-        factory(\App\Note::class, 10)
+        factory(Note::class, 10)
         	->create();
     }
 }

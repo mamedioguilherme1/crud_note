@@ -12,5 +12,21 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('notebooks');
 });
+
+Route::get('notebooks/index', function () {
+    return redirect('notebooks');
+});
+
+Route::group(['prefix' => 'notebooks'], function () {
+	Route::get('/', 'NoteController@index');
+	Route::get('create', 'NoteController@create');
+	Route::post('/', 'NoteController@store');
+	Route::get('{id}', 'NoteController@show');
+
+	Route::get('{id}/edit', 'NoteController@edit');
+	Route::put('{id}/edit', 'NoteController@update');
+	Route::get('{id}/delete', 'NoteController@destroy');
+});
+

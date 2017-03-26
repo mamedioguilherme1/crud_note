@@ -13,12 +13,12 @@ class Note extends Migration
      */
     public function up()
     {
-        Schema::create('note', function (Blueprint $table) {
+        Schema::create('notes', function (Blueprint $table) {
             $table->increments('id');
             $table->string('marca');
             $table->integer('memoria');
             $table->integer('hd');
-            $table->varchar('processador');
+            $table->string('processador');
             $table->timestamps();
         });
     }
@@ -30,6 +30,6 @@ class Note extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('note');
+        Schema::dropIfExists('notes');
     }
 }
