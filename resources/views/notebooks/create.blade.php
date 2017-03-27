@@ -4,6 +4,7 @@
 	<title>Notebooks</title>
 	{{ Html::style('css/style.css') }}
     {{ Html::style('css/bootstrap.min.css') }}
+    {{ Html::style('css/font.css') }}
 </head>
 <body>
 	<div class="topo text-center"><h1><a href="{{ url('notebooks')}}">CRUD Notebooks</a></h1></div>
